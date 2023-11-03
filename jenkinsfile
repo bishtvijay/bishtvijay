@@ -7,7 +7,8 @@ pipeline {
     slaveConnectTimeout 300
     idleMinutes 5
     yamlFile "pod.yaml"
-    podRetention 'Never()'
+    podRetention {
+        'never()'
   }
 }
 
