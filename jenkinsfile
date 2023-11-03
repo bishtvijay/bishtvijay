@@ -14,7 +14,7 @@ pipeline {
     stage ("Provision dev agent") {
 
       steps {
-        container('busybox') {
+        container('nginx') {
         echo POD_CONTAINER // displays 'busybox'
         sh 'hostname'
       }
