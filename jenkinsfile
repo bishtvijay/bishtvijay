@@ -1,0 +1,26 @@
+pipeline {
+
+  agent {
+  kubernetes {
+   // cloud 'dev-cloud'
+   // label "dev-agent-${env.BUILD_NUMBER}"
+    slaveConnectTimeout 300
+    idleMinutes 5
+    yamlFile "pod.yaml"
+  }
+}
+
+  stages {
+    stage ("Provision dev agent") {
+
+      steps {
+        container('busybox') {
+        echo POD_CONTAINER // displays 'busybox'
+        sh 'hostname'
+      }
+      }
+
+    }
+
+  }
+}
