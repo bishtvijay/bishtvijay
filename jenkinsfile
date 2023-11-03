@@ -8,7 +8,7 @@ pipeline {
     idleMinutes 5
     yamlFile "pod.yaml"
     podRetention (
-        'never()'
+        never()
   )
 }
 }
