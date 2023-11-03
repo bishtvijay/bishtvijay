@@ -4,8 +4,8 @@ pipeline {
   kubernetes {
    // cloud 'dev-cloud'
    // label "dev-agent-${env.BUILD_NUMBER}"
-    slaveConnectTimeout 300
-    idleMinutes 5
+    // slaveConnectTimeout 300
+    // idleMinutes 5
     yamlFile "pod.yaml"
     podRetention (
         never()
